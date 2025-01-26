@@ -1,0 +1,32 @@
+class Solution {
+public:
+    bool areNumbersAscending(string s) {
+        vector<int> nums;
+
+        for (int i = 0; i < s.size(); i++)
+         {
+            if (isdigit(s[i]))
+             { 
+                string S1;
+
+                
+                while (i < s.size() && isdigit(s[i]))
+                 {
+                    S1 += s[i++];
+                }
+
+                
+                nums.push_back(stoi(S1));
+            }
+        }
+
+        
+        for (int i = 0; i < nums.size() - 1; i++) {
+            if (nums[i] >= nums[i + 1]) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+};
