@@ -1,0 +1,23 @@
+class Solution {
+public:
+    void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
+        int M = m - 1;
+        int N = n - 1;
+        int right = m + n - 1;
+
+        while(N >= 0)
+        {
+            if(M >= 0 && nums1[M] > nums2[N])
+            {
+                nums1[right] = nums1[M];
+                M--;
+            }
+            else
+            {
+                nums1[right] = nums2[N];
+                N--;
+            }
+            right--;
+        }
+    }
+};
